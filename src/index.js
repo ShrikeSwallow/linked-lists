@@ -12,7 +12,7 @@ list.append("snake");
 list.append("turtle");
 list.prepend("lion");
 
-console.log(list.head.value);
-console.log(list.head);
-console.log(list.tail);
+console.log(list.head());
+console.log(list);
+console.log(list.tail());
 console.log(list.size);
