@@ -139,5 +139,28 @@ export default class LinkedList {
     }
     console.log("The index is bigger than the list size");
   };
-  removeAt = (index) => {};
+  removeAt = (index) => {
+    if (index === this.listSize - 1) {
+      this.pop();
+      return;
+    }
+    if (index === 0) {
+      this.headNode = this.headNode.nextNode;
+      this.listSize -= 1;
+      return;
+    }
+    let temp = this.headNode;
+    let currentIndex = 0;
+    while (currentIndex < this.listSize) {
+      if (currentIndex === index - 1) {
+        temp.nextNode = temp.nextNode.nextNode;
+        this.listSize -= 1;
+        return;
+      } else {
+        temp = temp.nextNode;
+        currentIndex += 1;
+      }
+    }
+    console.log("The index does not exist in this list");
+  };
 }

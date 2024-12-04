@@ -25,3 +25,8 @@ list.insertAt("hyena", 6);
 console.log(list.size());
 
 console.log(list.toString());
+
+list.removeAt(7);
+console.log(list.size());
+
+console.log(list.toString());
