@@ -16,7 +16,17 @@ export default class LinkedList {
     this.tail.index = this.size;
     this.size += 1;
   };
-  prepend = (value) => {};
+  prepend = (value) => {
+    if (this.size === 0) {
+      this.head = new Node(value);
+      this.tail = this.head;
+    } else {
+      const temp = new Node(value);
+      temp.nextNode = this.head;
+      this.head = temp;
+    }
+    this.size += 1;
+  };
   at = (index) => {};
   pop = () => {};
   contains = (value) => {};
