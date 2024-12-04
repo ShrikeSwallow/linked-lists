@@ -3,20 +3,20 @@ export default class LinkedList {
   constructor() {
     this.headNode = null;
     this.tailNode = null;
-    this.size = 0;
+    this.listSize = 0;
   }
   append = (value) => {
-    if (this.size === 0) {
+    if (this.listSize === 0) {
       this.headNode = new Node(value);
-      this.tailNode = this.head;
+      this.tailNode = this.headNode;
     } else {
       this.tailNode.nextNode = new Node(value);
       this.tailNode = this.tailNode.nextNode;
     }
-    this.size += 1;
+    this.listSize += 1;
   };
   prepend = (value) => {
-    if (this.size === 0) {
+    if (this.listSize === 0) {
       this.headNode = new Node(value);
       this.tailNode = this.headNode;
     } else {
@@ -24,7 +24,10 @@ export default class LinkedList {
       temp.nextNode = this.headNode;
       this.headNode = temp;
     }
-    this.size += 1;
+    this.listSize += 1;
+  };
+  size = () => {
+    return this.listSize;
   };
   head = () => {
     return this.headNode.value;
@@ -32,7 +35,23 @@ export default class LinkedList {
   tail = () => {
     return this.tailNode.value;
   };
-  at = (index) => {};
+  at = (index) => {
+    if (index >= 0 && index < this.listSize) {
+      let temp = this.headNode;
+      let currentIndex = 0;
+
+      while (currentIndex < this.listSize) {
+        if (currentIndex === index) {
+          return temp.value;
+        } else {
+          temp = temp.nextNode;
+          currentIndex += 1;
+        }
+      }
+    } else {
+      return `Index ${index} doesn't exist in this list!`;
+    }
+  };
   pop = () => {};
   contains = (value) => {};
   find = (value) => {};
