@@ -114,6 +114,22 @@ export default class LinkedList {
   };
 
   // extra credit methods
-  insertAt = (value, index) => {};
+  insertAt = (value, index) => {
+    let temp = this.headNode;
+    let currentIndex = 0;
+    while (currentIndex < this.listSize) {
+      if (currentIndex === index - 1) {
+        const newNode = new Node(value);
+        newNode.nextNode = temp.nextNode.nextNode;
+        temp.nextNode = newNode;
+        this.listSize += 1;
+        return;
+      } else {
+        temp = temp.nextNode;
+        currentIndex += 1;
+      }
+    }
+    console.log("The index is bigger than the list size");
+  };
   removeAt = (index) => {};
 }

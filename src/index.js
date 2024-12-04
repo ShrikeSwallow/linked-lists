@@ -21,7 +21,7 @@ console.log(list.size());
 console.log(list.contains("saiyan"));
 console.log(list.find("saiyan"));
 console.log(list.find("cat"));
-console.log(list.toString());
+list.insertAt("hyena", 9);
+console.log(list.size());
 
-const list2 = new LinkedList();
-console.log(list2.toString());
+console.log(list.toString());
