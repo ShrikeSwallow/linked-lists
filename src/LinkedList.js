@@ -85,7 +85,19 @@ export default class LinkedList {
     }
     return false;
   };
-  find = (value) => {};
+  find = (value) => {
+    let temp = this.headNode;
+    let counter = 0;
+    while (temp.nextNode !== null) {
+      if (temp.value === value) {
+        return counter;
+      } else {
+        temp = temp.nextNode;
+        counter += 1;
+      }
+    }
+    return null;
+  };
   toString = () => {};
 
   // extra credit methods

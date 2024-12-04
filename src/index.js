@@ -19,3 +19,5 @@ console.log(list.head());
 console.log(list.tail());
 console.log(list.size());
 console.log(list.contains("saiyan"));
+console.log(list.find("saiyan"));
+console.log(list.find("cat"));
