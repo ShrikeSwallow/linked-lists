@@ -13,3 +13,4 @@ list.append("turtle");
 
 console.log(list.head);
 console.log(list.tail);
+console.log(list.size);

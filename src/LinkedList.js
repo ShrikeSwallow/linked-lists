@@ -13,7 +13,7 @@ export default class LinkedList {
       this.tail.nextNode = new Node(value);
       this.tail = this.tail.nextNode;
     }
-
+    this.tail.index = this.size;
     this.size += 1;
   };
   prepend = (value) => {};
