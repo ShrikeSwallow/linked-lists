@@ -21,7 +21,7 @@ console.log(list.size());
 console.log(list.contains("saiyan"));
 console.log(list.find("saiyan"));
 console.log(list.find("cat"));
-list.insertAt("hyena", 9);
+list.insertAt("hyena", 6);
 console.log(list.size());
 
 console.log(list.toString());

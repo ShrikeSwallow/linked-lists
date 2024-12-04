@@ -115,12 +115,20 @@ export default class LinkedList {
 
   // extra credit methods
   insertAt = (value, index) => {
+    if (index === 0) {
+      this.prepend(value);
+      return;
+    }
+    if (index === this.listSize) {
+      this.append(value);
+      return;
+    }
     let temp = this.headNode;
     let currentIndex = 0;
     while (currentIndex < this.listSize) {
       if (currentIndex === index - 1) {
         const newNode = new Node(value);
-        newNode.nextNode = temp.nextNode.nextNode;
+        newNode.nextNode = temp.nextNode;
         temp.nextNode = newNode;
         this.listSize += 1;
         return;
