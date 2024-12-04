@@ -1,8 +1,8 @@
 import Node from "./Node";
 export default class LinkedList {
   constructor() {
-    this.headNode = null;
-    this.tailNode = null;
+    this.headNode = new Node();
+    this.tailNode = this.headNode;
     this.listSize = 0;
   }
   append = (value) => {
@@ -30,10 +30,10 @@ export default class LinkedList {
     return this.listSize;
   };
   head = () => {
-    return this.headNode.value;
+    return this.headNode.value ?? "The list is empty";
   };
   tail = () => {
-    return this.tailNode.value;
+    return this.tailNode.value ?? "The list is empty";
   };
   at = (index) => {
     if (index >= 0 && index < this.listSize) {
@@ -52,7 +52,28 @@ export default class LinkedList {
       return `Index ${index} doesn't exist in this list!`;
     }
   };
-  pop = () => {};
+  pop = () => {
+    let temp = this.headNode;
+    let counter = 0;
+    let limit = this.listSize - 1;
+    if (limit === 0) {
+      this.headNode.value = null;
+      this.tailNode.value = null;
+      this.listSize = 0;
+      return;
+    }
+    while (counter < limit) {
+      if (counter === limit - 1) {
+        temp.nextNode = null;
+        this.tailNode = temp;
+        this.listSize -= 1;
+        break;
+      } else {
+        temp = temp.nextNode;
+        counter += 1;
+      }
+    }
+  };
   contains = (value) => {};
   find = (value) => {};
   toString = () => {};

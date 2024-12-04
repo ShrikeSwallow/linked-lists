@@ -3,6 +3,7 @@ import LinkedList from "./LinkedList";
 import Node from "./Node";
 
 const list = new LinkedList();
+console.log(list.tail());
 
 list.append("dog");
 list.append("cat");
@@ -18,4 +19,12 @@ console.log(list);
 console.log(list.tail());
 console.log(list.size());
 
-console.log(list.at(8));
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+list.pop();
+
+console.log(list.tail());
+console.log(list.size());
