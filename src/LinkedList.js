@@ -98,7 +98,20 @@ export default class LinkedList {
     }
     return null;
   };
-  toString = () => {};
+  toString = () => {
+    let temp = this.headNode;
+    let string = "";
+
+    if (temp.value === null) {
+      string = "null";
+      return string;
+    }
+    while (temp !== null) {
+      string += "( " + temp.value + " ) -> ";
+      temp = temp.nextNode;
+    }
+    return `${string} null`;
+  };
 
   // extra credit methods
   insertAt = (value, index) => {};
