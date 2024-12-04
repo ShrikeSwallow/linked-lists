@@ -14,17 +14,8 @@ list.append("turtle");
 
 list.prepend("lion");
 
-console.log(list.head());
 console.log(list);
+console.log(list.head());
 console.log(list.tail());
 console.log(list.size());
-
-list.pop();
-list.pop();
-list.pop();
-list.pop();
-list.pop();
-list.pop();
-
-console.log(list.tail());
-console.log(list.size());
+console.log(list.contains("saiyan"));

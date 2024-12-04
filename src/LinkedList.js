@@ -74,7 +74,17 @@ export default class LinkedList {
       }
     }
   };
-  contains = (value) => {};
+  contains = (value) => {
+    let temp = this.headNode;
+    while (temp.nextNode !== null) {
+      if (temp.value === value) {
+        return true;
+      } else {
+        temp = temp.nextNode;
+      }
+    }
+    return false;
+  };
   find = (value) => {};
   toString = () => {};
 
