@@ -19,7 +19,7 @@ console.log(list.head());
 console.log(list.tail());
 console.log(list.size());
 console.log(list.contains("saiyan"));
-console.log(list.find("saiyan"));
+console.log(list.find("turtle"));
 console.log(list.find("cat"));
 list.insertAt("hyena", 6);
 console.log(list.size());
